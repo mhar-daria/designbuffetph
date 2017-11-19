@@ -1,0 +1,67 @@
+#sidebar {
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+
+    a:hover, a:hover {
+      text-decoration: none;
+      font-family: $font-family-gotham-bold;
+    }
+
+    li {
+
+      a {
+        display: block;
+        font-family: $font-family-gotham-regular;
+        font-size: 16px;
+        color: #000;
+        line-height: 35px;
+        border-bottom: 1px solid #ebebeb;
+        position: relative;
+
+        span.dropdown {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 25px;
+        }
+
+      }
+
+      &.has-child {
+        border-bottom: 1px solid #ebebeb;
+      }
+
+      &.active ul {
+        display: block;
+      }
+
+
+      ul {
+
+        display: none;
+
+        li {
+
+          a {
+            padding-left: 30px;
+            border: none;
+          }
+        }
+      }
+    }
+  }
+
+  @media ( min-width: $screen-lg ) {
+
+    h1 {
+
+      font-family: $font-family-gotham-bold;
+      font-size: 28px;
+      line-height: 55px;
+      border-bottom: 3px solid #ebebeb;
+      margin-top: 0;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+<?php
+/**
+ * Template Name: Front Page
+ *
+ * @package DesignBuffetPh
+ * @since 2017
+ */
+?>
+
+<?php get_header() ?>
+  
+  <?php if( 'posts' == get_option( 'show_on_front' ) ) { ?>
+    <?php include( get_home_template() ); ?>
+  <?php } else { ?>
+    <?php include( get_page_template() ); ?>
+  <?php } ?>
+
+<?php get_footer() ?>
