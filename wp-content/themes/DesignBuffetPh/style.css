@@ -3006,7 +3006,7 @@ tbody.collapse.in {
 
 @media (min-width: 1200px) {
   .navbar-collapse.logo-bottom {
-    margin-top: 80px;
+    margin-top: 65px;
     margin-bottom: 25px; } }
 
 @media (min-width: 768px) {
@@ -3042,7 +3042,7 @@ tbody.collapse.in {
 .container-fluid > .navbar-collapse {
   margin-right: -15px;
   margin-left: -15px;
-  margin-top: 80px;
+  margin-top: 65px;
   margin-bottom: 25px; }
 
 @media (min-width: 768px) {

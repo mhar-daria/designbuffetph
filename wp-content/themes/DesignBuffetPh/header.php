@@ -57,9 +57,11 @@
         </a>
 
         <div class="collapse navbar-collapse navbar-main-collapse logo-bottom">
+          <?php $segmentUri = fn_get_url_segment(get_page_uri()); ?>
+
           <ul class="nav navbar-nav nav-others">
             <?php foreach ($footerMenu as $key => $menu) { ?>
-              <li class="<?php echo (get_page_uri() === strtolower($menu->title)) ? 'active' : '' ?>"><a href="<?php echo $menu->url ?>"><?php echo ucwords($menu->title) ?></a></li>
+              <li class="<?php echo (strtolower($segmentUri) === strtolower($menu->title)) ? 'active' : '' ?>"><a href="<?php echo $menu->url ?>"><?php echo ucwords($menu->title) ?></a></li>
             <?php } ?>
           </ul>
         </div>
