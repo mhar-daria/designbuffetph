@@ -7,7 +7,7 @@ $bootstrap-sass-asset-helper: false !default;
 // extra
 $logo-max-height:                  220px;
 
-$navbar-collapse-margin-top:       ($logo-max-height/2) - 30;
+$navbar-collapse-margin-top:       ($logo-max-height/2) - 45;
 $navbar-collapse-margin-top:       $navbar-collapse-margin-top;
 $navbar-collapse-margin-bottom:    25px;
 $navbar-collapse-background:       #000000;
@@ -56,6 +56,8 @@ $link-hover-decoration: underline !default;
 
 // $font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-family-sans-serif:  AVENIR_BOLD, "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-avenir-bold: AVENIR_BOLD, "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-avenir-black: AVENIR_BLACK, "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-family-gotham-bold:     GOTHAM_BOLD, "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-family-gotham-regular:     GOTHAM_REGULAR, "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-family-serif:       Georgia, "Times New Roman", Times, serif !default;

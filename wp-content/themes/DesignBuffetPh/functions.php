@@ -50,15 +50,15 @@
 
   add_theme_support( 'post-thumbnails' );
 
-  if ( function_exists('register_sidebar') ) {
+  // if ( function_exists('register_sidebar') ) {
 
-    register_sidebar( [
-      'before_widget' => '<li id="%1$s" class="widget %2$s">', 
-      'after_widget'  => '</li>',
-      'before_title'  => '<h2 class="widgettitle">',
-      'after_title'   => '</h2>'
-    ] );
-  }
+  //   register_sidebar( [
+  //     'before_widget' => '<li id="%1$s" class="widget %2$s">', 
+  //     'after_widget'  => '</li>',
+  //     'before_title'  => '<h2 class="widgettitle">',
+  //     'after_title'   => '</h2>'
+  //   ] );
+  // }
 
   if ( function_exists( 'register_sidebar' ) ) {
 
@@ -73,11 +73,26 @@
     ] );
   }
 
-  function php_execute($html){
-    if(strpos($html,"<"."?php")!==false){ ob_start(); eval("?".">".$html);
-    $html=ob_get_contents();
-    ob_end_clean();
+  if ( function_exists('register_sidebar') ) {
+
+    register_sidebar( [
+      'name'  => 'Portfolio Sidebar',
+      'id'    => 'portfolio-sidebar',
+      'desctiption' => 'Appears as the sidebar on the custom portfolio',
+      'before_widget' => '<div style="col-md-12 col-xs-12">',
+      'after_widget'  => '</div>',
+      'before_title'  => '<h1 class="widgettitle">',
+      'after_title'   => '</h1>'
+    ] );
   }
+
+  function php_execute($html){
+    if(strpos($html,"<"."?php")!==false){ 
+      ob_start(); eval("?".">".$html);
+      $html=ob_get_contents();
+      ob_end_clean();
+    }
+
     return $html;
   }
 

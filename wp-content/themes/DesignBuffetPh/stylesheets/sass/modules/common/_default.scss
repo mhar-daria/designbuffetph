@@ -22,3 +22,30 @@
 .show {
   display: block;
 }
+
+@media(min-width: $screen-lg) {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $font-family-avenir-black;
+
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  h3 {
+    font-family: 26px;
+  }
+
+  h4 {
+    font-family: 24px;
+  }
+
+  h5 {
+    font-family: 20px;
+  }
+
+  h6 {
+    font-family: 16px;
+  }
+}

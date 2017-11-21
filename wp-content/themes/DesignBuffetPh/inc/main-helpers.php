@@ -158,4 +158,16 @@
       return implode('/', $url);
     }
   }
+
+  if ( ! function_exists('fn_get_url_segment') ) {
+
+    function fn_get_url_segment( $path = null, $segment_id = 0 ) {
+
+       $path = explode('/', $path);
+
+       return (isset($path) && $path[$segment_id]) 
+                ? $path[$segment_id] 
+                : null;
+    }
+  }
  ?>

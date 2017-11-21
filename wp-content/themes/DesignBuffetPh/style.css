@@ -2962,7 +2962,8 @@ tbody.collapse.in {
   position: relative;
   min-height: 50px;
   margin-bottom: 20px;
-  border: 1px solid transparent; }
+  border: 1px solid transparent;
+  overflow: hidden; }
 
 .navbar:before, .navbar:after {
   content: " ";
@@ -3006,7 +3007,7 @@ tbody.collapse.in {
 
 @media (min-width: 1200px) {
   .navbar-collapse.logo-bottom {
-    margin-top: 80px;
+    margin-top: 65px;
     margin-bottom: 25px; } }
 
 @media (min-width: 768px) {
@@ -3042,7 +3043,7 @@ tbody.collapse.in {
 .container-fluid > .navbar-collapse {
   margin-right: -15px;
   margin-left: -15px;
-  margin-top: 80px;
+  margin-top: 65px;
   margin-bottom: 25px; }
 
 @media (min-width: 768px) {
@@ -5394,9 +5395,29 @@ button.close {
 .show {
   display: block; }
 
+@media (min-width: 1200px) {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: AVENIR_BLACK, "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  h2 {
+    font-size: 30px; }
+  h3 {
+    font-family: 26px; }
+  h4 {
+    font-family: 24px; }
+  h5 {
+    font-family: 20px; }
+  h6 {
+    font-family: 16px; } }
+
 @font-face {
   font-family: AVENIR_BOLD;
   src: url(fonts/Avenir-Book.ttf) format("truetype");
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: AVENIR_BLACK;
+  src: url(fonts/Avenir-Black.otf) format("truetype");
   font-weight: bold;
   font-style: normal; }
 
@@ -5571,3 +5592,7 @@ footer .navbar .navbar-collapse {
 
 footer .copyright {
   font-size: 12px; }
+
+@media (min-width: 1200px) {
+  #about .dbph-logo-right {
+    margin-top: -95px; } }
