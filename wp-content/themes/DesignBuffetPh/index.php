@@ -19,7 +19,7 @@
       <?php if ( ! is_front_page() ) { ?>
 
       <?php } ?>
-
+      
       <?php the_content() ?>
 
       <?php endwhile; else: ?>
