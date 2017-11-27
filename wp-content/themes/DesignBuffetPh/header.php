@@ -12,6 +12,7 @@
 <html <?php language_attributes(); ?> class="no-js">
 <head>
   <meta charset="<?php bloginfo( 'charset' ); ?>">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title><?php is_front_page() ? bloginfo('description') : wp_title('') ?> | <?php bloginfo('name') ?></title>
@@ -34,7 +35,7 @@
     <?php if ( is_front_page() ) { ?>
 
       <div class="col-xs-12 col-md-12">
-        <a href="/" class="logo-link">
+        <a href="<?php echo fn_base_url() ?>" class="logo-link">
           <img src="<?php echo $logo[0] ?>" 
                alt="" 
                class="img-responsive center-block logo" />  
@@ -50,11 +51,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
+
+          <a href="<?php echo fn_base_url() ?>" class="navbar-brand logo-link logo right">
+          <img src="<?php echo get_attachment_url_by_slug('logo-2') ?>" alt="" class="img-responsive">
+        </a>
         </div>
 
-        <a href="<?php echo bloginfo() ?>" class="logo right">
-          <img src="<?php echo $logo[0] ?>" alt="" class="img-responsive">
-        </a>
+        
 
         <div class="collapse navbar-collapse navbar-main-collapse logo-bottom">
           <?php $segmentUri = fn_get_url_segment(get_page_uri()); ?>

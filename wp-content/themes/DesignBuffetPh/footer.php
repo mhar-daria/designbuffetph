@@ -18,16 +18,8 @@
     <?php if ( is_front_page() ) { ?>
         
     <nav class="navbar navbar-default" role="navigation">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-          <span class="sr-only">Main Navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      </div>
 
-      <div class="collapse navbar-collapse navbar-main-collapse">
+      <div class="navbar-collapse navbar-main-collapse">
         <ul class="nav navbar-nav">
           <?php foreach ($footerMenu as $key => $menu) { ?>
             <li><a href="<?php echo $menu->url ?>"><?php echo ucwords($menu->title) ?></a></li>

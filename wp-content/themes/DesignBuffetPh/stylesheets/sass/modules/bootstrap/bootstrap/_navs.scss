@@ -12,16 +12,31 @@
   list-style: none;
   @include clearfix;
 
-  &.nav-others {
-    >li {
+  @media (min-width: $screen-lg-min) {
 
-      > a {
-        padding: $nav-others-link-padding;
+    &.nav-others {
+      >li {
+
+        > a {
+          padding: $nav-others-link-padding;
+        }
+
+        &:last-child a {
+          padding-right: 125px;
+        }
       }
+    }
+  }
 
-      &:last-child a {
-        padding-right: 125px;
-      }  
+  @media (min-width: $screen-md-min) {
+
+    &.nav-others {
+      >li {
+
+        > a {
+          padding: $nav-others-link-padding;
+        }
+      }
     }
   }
 

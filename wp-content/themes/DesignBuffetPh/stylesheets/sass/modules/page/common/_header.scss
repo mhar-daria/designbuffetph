@@ -1,5 +1,13 @@
 header {
-  @media (min-width: $screen-lg) {
+
+  .logo-link {
+
+    width: 150px;
+    display: block;
+    margin: auto;
+  }
+
+  @media (min-width: $screen-md-min) {
 
     .logo-link {
 
@@ -15,6 +23,26 @@ header {
       &.right {
         position: absolute;
         margin-left: 20px;
+      }
+    }
+  }
+
+  /* tablets */
+  @media (min-width: $screen-sm-min) {
+
+    .logo-link {
+
+      width: 250px;
+      height: 176px;
+      display: block;
+      margin: auto;
+    }
+
+    .logo {
+      max-width: $logo-max-height;
+ 
+      &.right {
+        position: absolute;
       }
     }
   }

@@ -5,6 +5,21 @@ footer {
     display: inline-block;
     float: none;
 
+    @media (max-width: $screen-xs) {
+
+      width: 100%;
+
+      li {
+
+        border-bottom: 1px solid #a1a1a1;
+
+        &:last-child {
+
+          border-bottom: none;
+        }
+      }
+    }
+
     li a {
       text-transform: uppercase;
     }

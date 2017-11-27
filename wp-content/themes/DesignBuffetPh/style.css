@@ -2821,11 +2821,15 @@ tbody.collapse.in {
 .nav:after {
   clear: both; }
 
-.nav.nav-others > li > a {
-  padding: 10px 30px; }
+@media (min-width: 1200px) {
+  .nav.nav-others > li > a {
+    padding: 10px 30px; }
+  .nav.nav-others > li:last-child a {
+    padding-right: 125px; } }
 
-.nav.nav-others > li:last-child a {
-  padding-right: 125px; }
+@media (min-width: 992px) {
+  .nav.nav-others > li > a {
+    padding: 10px 30px; } }
 
 .nav > li {
   position: relative;
@@ -2976,6 +2980,9 @@ tbody.collapse.in {
   .navbar {
     border-radius: none; } }
 
+.navbar-header {
+  min-height: 88px; }
+
 .navbar-header:before, .navbar-header:after {
   content: " ";
   display: table; }
@@ -3005,9 +3012,14 @@ tbody.collapse.in {
 .navbar-collapse.in {
   overflow-y: auto; }
 
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
   .navbar-collapse.logo-bottom {
-    margin-top: 65px;
+    margin-top: 69px;
+    margin-bottom: 25px; } }
+
+@media (min-width: 768px) {
+  .navbar-collapse.logo-bottom {
+    margin-top: 69px;
     margin-bottom: 25px; } }
 
 @media (min-width: 768px) {
@@ -3043,7 +3055,7 @@ tbody.collapse.in {
 .container-fluid > .navbar-collapse {
   margin-right: -15px;
   margin-left: -15px;
-  margin-top: 65px;
+  margin-top: 69px;
   margin-bottom: 25px; }
 
 @media (min-width: 768px) {
@@ -3104,7 +3116,6 @@ tbody.collapse.in {
 .navbar-toggle {
   position: relative;
   float: right;
-  margin-right: 15px;
   padding: 9px 10px;
   margin-top: 8px;
   margin-bottom: 8px;
@@ -5565,7 +5576,15 @@ button.close {
     border-bottom: 3px solid #ebebeb;
     margin-top: 0; } }
 
-@media (min-width: 1200px) {
+header {
+  /* tablets */ }
+
+header .logo-link {
+  width: 150px;
+  display: block;
+  margin: auto; }
+
+@media (min-width: 992px) {
   header .logo-link {
     width: 250px;
     height: 176px;
@@ -5577,12 +5596,31 @@ button.close {
     position: absolute;
     margin-left: 20px; } }
 
+@media (min-width: 768px) {
+  header .logo-link {
+    width: 250px;
+    height: 176px;
+    display: block;
+    margin: auto; }
+  header .logo {
+    max-width: 220px; }
+  header .logo.right {
+    position: absolute; } }
+
 footer {
   margin-top: 10px; }
 
 footer .navbar .navbar-nav {
   display: inline-block;
   float: none; }
+
+@media (max-width: 480px) {
+  footer .navbar .navbar-nav {
+    width: 100%; }
+  footer .navbar .navbar-nav li {
+    border-bottom: 1px solid #a1a1a1; }
+  footer .navbar .navbar-nav li:last-child {
+    border-bottom: none; } }
 
 footer .navbar .navbar-nav li a {
   text-transform: uppercase; }

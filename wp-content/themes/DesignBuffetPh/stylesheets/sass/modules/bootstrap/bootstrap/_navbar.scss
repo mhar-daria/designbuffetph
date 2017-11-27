@@ -31,6 +31,8 @@
 .navbar-header {
   @include clearfix;
 
+  min-height: 88px;
+
   @media (min-width: $grid-float-breakpoint) {
     float: left;
   }
@@ -60,7 +62,15 @@
     overflow-y: auto;
   }
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-md-min) {
+    
+    &.logo-bottom {
+      margin-top: $navbar-collapse-margin-top;
+      margin-bottom: $navbar-collapse-margin-bottom;
+    }
+  }
+
+  @media (min-width: $screen-sm-min) {
     
     &.logo-bottom {
       margin-top: $navbar-collapse-margin-top;
@@ -203,7 +213,7 @@
 .navbar-toggle {
   position: relative;
   float: right;
-  margin-right: $navbar-padding-horizontal;
+  // margin-right: $navbar-padding-horizontal;
   padding: 9px 10px;
   @include navbar-vertical-align(34px);
   background-color: transparent;
@@ -281,6 +291,7 @@
 
     > li {
       float: left;
+
       > a {
         // padding-top:    $navbar-padding-vertical;
         // padding-bottom: $navbar-padding-vertical;
