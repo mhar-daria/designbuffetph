@@ -5510,12 +5510,26 @@ button.close {
 .grid .grid-item:first-child {
   padding-top: 0; }
 
+#services h3 {
+  font-family: GOTHAM_BOLD, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #000;
+  text-align: center; }
+
+#services #content {
+  padding-left: 0;
+  padding-right: 0; }
+
+#services #content .content-container {
+  min-height: 365px; }
+
 @media (min-width: 1200px) {
+  #services h2 {
+    margin-top: 9px;
+    padding-left: 15px; }
   #services h3 {
-    font-family: GOTHAM_BOLD, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 15px;
-    font-weight: 600;
-    color: #000; }
+    text-align: left; }
   #services #content .content-container {
     min-height: 365px;
     margin-bottom: 20px; }
@@ -5551,6 +5565,8 @@ button.close {
 
 #sidebar ul li a span.dropdown {
   position: absolute;
+  width: 25px;
+  text-align: center;
   top: 0;
   bottom: 0;
   right: 25px; }

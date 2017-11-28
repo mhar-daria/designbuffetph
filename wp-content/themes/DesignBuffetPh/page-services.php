@@ -25,7 +25,7 @@
                           : get_pages(['parent' => get_page()->ID]); ?>
 
         <div class="col-md-9 col-xs-12" id="content" role="main">
-          <div class="col-md-12 col-xs-12">
+          <div class="col-md-12 col-xs-12 np">
             <h2><?php echo $currentPage->post_title; ?></h2>
 
           <?php if(! $pages): ?>

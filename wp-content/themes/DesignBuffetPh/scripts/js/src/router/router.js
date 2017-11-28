@@ -52,30 +52,29 @@ module.exports = function() {
 
         dropdown: function ( evt ) {
 
+          evt.preventDefault();
+
           var $elem = $(evt.target);
           var $parent = $elem.closest('li'),
               $subCategory = $parent.find('ul'),
               timer = null;
 
-          timer = setTimeout(function () {
+          if ( $elem.text() == '+' ) {
 
-            $parent.one('mouseleave', function () {
-
-              $subCategory.css('display', 'none');
-              clearTimeout(timer);
-            });
-          }, 200);
-
-          if ( $subCategory.is(':hidden') ) {
+            $elem.text('-');
             $subCategory.css('display', 'block');
+          } else {
+
+            $elem.text('+');
+            $subCategory.css('display', 'none');
           }
 
           return true;
         },
 
         events: {
-          "mouseenter div.textwidget > ul > li": "dropdown",
-          "mouseleave div.textwidget > ul > li": "dropdownClose",
+          "click div.textwidget span.dropdown": "dropdown",
+          "click div.textwidget span.dropdown": "dropdown",
         },
       });
 
