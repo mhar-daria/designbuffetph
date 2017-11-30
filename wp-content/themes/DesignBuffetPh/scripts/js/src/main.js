@@ -2,9 +2,10 @@
 
 var APP = window.APP || {};
 
+var utils = require('./resources/utils');
+
 // routing
 var router = require('./router/router');
-
 
 (function() {
 

@@ -35,7 +35,12 @@
 
     <?php } ?>
   </footer>
-
+  
+  <script type="text/javascript">
+    window.APP = {
+      ajaxUrl: '<?php echo admin_url("admin-ajax.php"); ?>'
+    };
+  </script>
   <script src="<?php echo get_template_directory_uri().'/js/main.vendor.build.js' ?>"></script>
   <script src="<?php echo get_template_directory_uri().'/js/main.build.js' ?>"></script>
 </body>

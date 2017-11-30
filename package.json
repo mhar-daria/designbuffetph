@@ -15,8 +15,7 @@
     "jquery-bridget": "^2.0.1",
     "jquery-lazyload": "^1.9.7",
     "masonry-layout": "^4.2.0",
-    "merge-stream": "^1.0.1",
-    "underscore": "^1.8.3"
+    "merge-stream": "^1.0.1"
   },
   "devDependencies": {
     "bootstrap-sass": "^3.3.7",
@@ -25,7 +24,8 @@
     "gulp-jshint": "^2.0.4",
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "^3.0.0",
-    "gutil": "^1.6.4"
+    "gutil": "^1.6.4",
+    "underscore": "^1.8.3"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
