@@ -28,7 +28,7 @@ define('DB_NAME', 'designbuffetph');
 define('DB_USER', 'root');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'P@$$w0rd23');
+define('DB_PASSWORD', 'Design143');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
