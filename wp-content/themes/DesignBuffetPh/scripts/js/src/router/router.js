@@ -47,7 +47,41 @@ module.exports = function() {
 
         el: "#services",
 
+        pagination: require('./../view/common/pagination.v.js'),
+
         initialize: function () {
+
+          var ajaxUrl = APP.ajaxUrl;
+
+          _.extend(this.pagination.prototype, {
+
+            el: '#services',
+            
+            // template: _.template(this.tpl),
+
+            page: 2,
+
+            limit: 20,
+
+            url: 'category',
+
+            collectionBox: '.home-deal-group',
+
+            requests: {
+              page_title  : 'digital marketing',
+              page        : '1',
+              offset      : 2,
+              action      : 'pyro_pagination',
+            },
+
+            initialize: function() {
+              // console.log(options.section)
+              console.log('hery')
+              this.paginate();
+            }
+          });
+
+          new this.pagination;
         },
 
         dropdown: function ( evt ) {
@@ -73,8 +107,8 @@ module.exports = function() {
         },
 
         events: {
-          "click div.textwidget span.dropdown": "dropdown",
-          "click div.textwidget span.dropdown": "dropdown",
+          "click div.classic-text-widget span.dropdown": "dropdown",
+          "click div.classic-text-widget span.dropdown": "dropdown",
         },
       });
 

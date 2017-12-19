@@ -19,4 +19,5 @@ require('jquery-lazyload');
 window.bootstrap = require('bootstrap');
 
 window.Backbone = require('backbone');
+window._ = require('underscore');
 

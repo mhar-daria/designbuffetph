@@ -104,7 +104,7 @@
 
           $children = fn_object_to_html($elements, $element->ID, $defaultParent);
 
-          $html .= "<li ".($children ? 'class="has-child"' : '')."><a href='".get_permalink($element->ID)."'>{$element->post_title}". ($element->post_parent == $defaultParent ? '<span class=\'dropdown show\'>+</span>' : '')."</a>";
+          $html .= "<li ".($children ? 'class="has-child"' : '')."><a href='".get_permalink($element->ID)."'>{$element->post_title}". (($element->post_parent == $defaultParent && $children)? '<span class=\'dropdown show\'>+</span>' : '')."</a>";
 
           if ($children) {
               $html .= $children;

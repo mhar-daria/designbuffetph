@@ -50,35 +50,22 @@
 
   add_theme_support( 'post-thumbnails' );
 
-  // if ( function_exists('register_sidebar') ) {
-
-  //   register_sidebar( [
-  //     'before_widget' => '<li id="%1$s" class="widget %2$s">', 
-  //     'after_widget'  => '</li>',
-  //     'before_title'  => '<h2 class="widgettitle">',
-  //     'after_title'   => '</h2>'
-  //   ] );
-  // }
-
   if ( function_exists( 'register_sidebar' ) ) {
 
     register_sidebar( [
-      'name'  => 'Services Sidebar',
-      'id'    => 'services-sidebar',
-      'desctiption' => 'Appears as the sidebar on the custom services',
+      'name'          => 'ServicesSidebar',
+      'id'            => 'services-sidebar',
+      'desctiption'   => 'Appears as the sidebar on the custom services',
       'before_widget' => '<div style="col-md-12 col-xs-12">',
       'after_widget'  => '</div>',
       'before_title'  => '<h1 class="widgettitle">',
       'after_title'   => '</h1>'
     ] );
-  }
-
-  if ( function_exists('register_sidebar') ) {
 
     register_sidebar( [
-      'name'  => 'Portfolio Sidebar',
-      'id'    => 'portfolio-sidebar',
-      'desctiption' => 'Appears as the sidebar on the custom portfolio',
+      'name'          => 'PortfolioSidebar',
+      'id'            => 'portfolio-sidebar',
+      'desctiption'   => 'Appears as the sidebar on the custom portfolio',
       'before_widget' => '<div style="col-md-12 col-xs-12">',
       'after_widget'  => '</div>',
       'before_title'  => '<h1 class="widgettitle">',
@@ -96,7 +83,7 @@
     return $html;
   }
 
-  add_filter('widget_text','php_execute',100);
+  add_filter('classic_widget_text','php_execute',100);
 
   function get_attachment_url_by_slug( $slug ) {
     $args = array(
@@ -108,6 +95,36 @@
     $_header = get_posts( $args );
     $header = $_header ? array_pop($_header) : null;
     return $header ? wp_get_attachment_url($header->ID) : '';
+  }
+
+  add_action('', '');
+
+  add_action( 'wp_ajax_pyro_pagination', 'pyro_pagination' );
+
+  function pyro_pagination() {
+
+    global $wpdb;
+
+    $page = (isset($_GET['page']))
+              ? sanitize_text_field($_GET['page'])
+              : 1;
+    $cur_page = $page;
+    $page -= 1;
+
+    $per_page = (isset($_GET['offset']))
+                  ? sanitize_text_field($_GET['offset'])
+                  : 10;
+
+fn_print_die($_GET['offest'], $per_page);
+    $start = $page * $per_page;
+
+    $data = get_pages(['parent' => get_page_by_title('services')->ID,
+                       'hierarchical' => false, 
+                       'number' => $prepare, 
+                       'offset' => $start,
+                       'post_status' => 'publish']);
+
+    wp_send_json(['data' => $data, 'timestamp' => date('Y-m-d H:i:s')]);
   }
 
   include('inc/main-helpers.php');
