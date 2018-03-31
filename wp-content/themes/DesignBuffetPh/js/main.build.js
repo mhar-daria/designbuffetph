@@ -1560,8 +1560,8 @@ module.exports = function() {
         },
 
         events: {
-          "click div.classic-text-widget span.dropdown": "dropdown",
-          "click div.classic-text-widget span.dropdown": "dropdown",
+          "click div.execphpwidget span.dropdown": "dropdown",
+          "click div.execphpwidget span.dropdown": "dropdown",
         },
       });
 
