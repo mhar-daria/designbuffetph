@@ -1,7 +1,7 @@
 // this will handle all the routing for dynamic loading of modules
 
 module.exports = function() {
-    
+
     // route for homepage
     // crossroads.addRoute('recipe/create', function () {
     //   // var g = require('./../view/recipe/create.v.js');
@@ -14,28 +14,12 @@ module.exports = function() {
 
         el: ".grid",
 
-        events: {
-          "mouseenter div.item": "showItemDetails",
-          "mouseleave div.item": "hideItemDetails",
-        },
-
         initialize: function () {
-
+          this.$el.find('.grid-item .item').flip();
+          this.$el.find('.grid-item .item .front img').lazyload({
+            threshold: 300
+          });
         },
-
-        showItemDetails: function ( evt ) {
-
-          var $parent = $(evt.target).closest('.item');
-
-          $parent.find('img').slideUp(200);
-        },
-
-        hideItemDetails: function ( evt ) {
-
-          var $parent = $(evt.target).closest('.item');
-
-          $parent.find('img').slideDown(200);
-        }
       });
 
       new homepage();
@@ -56,7 +40,7 @@ module.exports = function() {
           _.extend(this.pagination.prototype, {
 
             el: '#services',
-            
+
             // template: _.template(this.tpl),
 
             page: 2,
@@ -114,7 +98,7 @@ module.exports = function() {
 
       new services;
     });
-    
+
     // var recipePerCategory = crossroads.addRoute('{category_name}/edit/{recipe_name}',
     //   function ( category_name, recipe_name ) {
 

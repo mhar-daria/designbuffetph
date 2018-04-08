@@ -30,15 +30,15 @@
     <?php $custom_logo_id = get_theme_mod( 'custom_logo' ) ?>
     <?php $logo = wp_get_attachment_image_src($custom_logo_id, 'full') ?>
 
-    <?php $footerMenu = wp_get_nav_menu_items('footer-menu') ?>    
+    <?php $footerMenu = wp_get_nav_menu_items('footer-menu') ?>
 
     <?php if ( is_front_page() ) { ?>
 
       <div class="col-xs-12 col-md-12">
         <a href="<?php echo fn_base_url() ?>" class="logo-link">
-          <img src="<?php echo $logo[0] ?>" 
-               alt="" 
-               class="img-responsive center-block logo" />  
+          <img src="<?php echo $logo[0] ?>"
+               alt=""
+               class="img-responsive center-block logo" />
         </a>
       </div>
     <?php } else { ?>
@@ -57,14 +57,19 @@
         </a>
         </div>
 
-        
+
 
         <div class="collapse navbar-collapse navbar-main-collapse logo-bottom">
           <?php $segmentUri = fn_get_url_segment(get_page_uri()); ?>
 
           <ul class="nav navbar-nav nav-others">
+            <li class="">
+              <a href="/">Home</a>
+            </li>
             <?php foreach ($footerMenu as $key => $menu) { ?>
-              <li class="<?php echo (strtolower($segmentUri) === strtolower($menu->title)) ? 'active' : '' ?>"><a href="<?php echo $menu->url ?>"><?php echo ucwords($menu->title) ?></a></li>
+              <li class="<?php echo (strtolower($segmentUri) === strtolower($menu->title)) ? 'active' : '' ?>">
+                <a href="<?php echo $menu->url ?>"><?php echo ucwords($menu->title) ?></a>
+              </li>
             <?php } ?>
           </ul>
         </div>
@@ -72,6 +77,6 @@
   <?php } ?>
   </header>
   <!-- end of header -->
-  
+
   <!-- content -->
   <main id="content" class="container">

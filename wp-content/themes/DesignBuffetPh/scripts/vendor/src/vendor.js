@@ -16,8 +16,9 @@ window.hasher = require('hasher');
 
 require('jquery-lazyload');
 
+require('./jquery-flip.js');
+
 window.bootstrap = require('bootstrap');
 
 window.Backbone = require('backbone');
 window._ = require('underscore');
-

@@ -10,16 +10,16 @@
 <?php $slug = basename(get_permalink()); ?>
 
 <?php get_header(); ?>
-  
+
   <div class="row">
 
     <div class="container <?php echo (is_front_page()) ? 'grid' : '' ?>">
       <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-      
+
       <?php if ( ! is_front_page() ) { ?>
 
       <?php } ?>
-      
+
       <?php the_content() ?>
 
       <?php endwhile; else: ?>
