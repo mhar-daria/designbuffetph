@@ -12,8 +12,6 @@
 <?php $pageName = get_query_var('pagename') ?>
 <?php $currentPage = get_page(); ?>
 
-
-
   <div class="row">
 
     <div class="container" id="services">
@@ -22,7 +20,7 @@
 
         <?php get_sidebar('services') ?>
 
-        <?php $pages = ($pageName == 'services') 
+        <?php $pages = ($pageName == 'services')
                           ? get_pages(['child_of' => get_page_by_title('digital marketing')->ID])
                           : get_pages(['parent' => get_page()->ID]); ?>
 
@@ -40,7 +38,7 @@
             <?php foreach($pages as $page): ?>
 
               <div class="col-md-4 col-xs-12 content-container">
-                
+
                 <a href="<?php echo get_permalink($page->ID) ?>">
                   <div class="featured-container">
                     <img src="<?php echo get_the_post_thumbnail_url($page->ID) ?>" alt="" class="featured-image img-responsive center-block">
@@ -53,7 +51,7 @@
           <?php endif; ?>
           </div>
         </div>
-        
+
       <?php endwhile; else: ?>
         <div class="no-results">
           <p><strong>There has been an error.</strong></p>

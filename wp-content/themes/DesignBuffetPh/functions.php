@@ -1,7 +1,7 @@
-<?php 
+<?php
 
   add_theme_support('custom-logo');
-  
+
   function themename_custom_logo_setup() {
 
     $defaults = [
@@ -34,7 +34,7 @@
     'admin-head-callback'    => '',
     'admin-preview-callback' => '',
   );
-    
+
   add_theme_support( 'custom-header', $defaults );
 
   // for menu
@@ -73,18 +73,6 @@
     ] );
   }
 
-  function php_execute($html){
-    if(strpos($html,"<"."?php")!==false){ 
-      ob_start(); eval("?".">".$html);
-      $html=ob_get_contents();
-      ob_end_clean();
-    }
-
-    return $html;
-  }
-
-  add_filter('classic_widget_text','php_execute',100);
-
   function get_attachment_url_by_slug( $slug ) {
     $args = array(
       'post_type' => 'attachment',
@@ -96,8 +84,6 @@
     $header = $_header ? array_pop($_header) : null;
     return $header ? wp_get_attachment_url($header->ID) : '';
   }
-
-  add_action('', '');
 
   add_action( 'wp_ajax_pyro_pagination', 'pyro_pagination' );
 
@@ -119,8 +105,8 @@ fn_print_die($_GET['offest'], $per_page);
     $start = $page * $per_page;
 
     $data = get_pages(['parent' => get_page_by_title('services')->ID,
-                       'hierarchical' => false, 
-                       'number' => $prepare, 
+                       'hierarchical' => false,
+                       'number' => $prepare,
                        'offset' => $start,
                        'post_status' => 'publish']);
 

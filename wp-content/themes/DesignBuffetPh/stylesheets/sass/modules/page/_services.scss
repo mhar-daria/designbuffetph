@@ -20,6 +20,10 @@
     }
   }
 
+  .active > a {
+    font-family: GOTHAM_BOLD, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  }
+
   @media(min-width: $screen-lg-min) {
 
     h2 {
@@ -41,7 +45,7 @@
         margin-bottom: 20px;
 
         a:hover, a:active {
-      
+
           text-decoration: none;
         }
 

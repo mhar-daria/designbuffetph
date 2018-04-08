@@ -16,9 +16,6 @@ module.exports = function() {
 
         initialize: function () {
           this.$el.find('.grid-item .item').flip();
-          this.$el.find('.grid-item .item .front img').lazyload({
-            threshold: 300
-          });
         },
       });
 
@@ -91,8 +88,8 @@ module.exports = function() {
         },
 
         events: {
-          "click div.classic-text-widget span.dropdown": "dropdown",
-          "click div.classic-text-widget span.dropdown": "dropdown",
+          "click div.execphpwidget span.dropdown": "dropdown",
+          "click div.execphpwidget span.dropdown": "dropdown",
         },
       });
 

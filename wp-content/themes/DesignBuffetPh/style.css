@@ -5529,6 +5529,9 @@ button.close {
 #services #content .content-container {
   min-height: 365px; }
 
+#services .active > a {
+  font-family: GOTHAM_BOLD, "Helvetica Neue", Helvetica, Arial, sans-serif !important; }
+
 @media (min-width: 1200px) {
   #services h2 {
     margin-top: 9px;

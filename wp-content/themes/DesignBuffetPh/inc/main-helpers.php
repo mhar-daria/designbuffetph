@@ -1,4 +1,4 @@
-<?php 
+<?php
 
   if ( !function_exists('fn_print_die'))
   {
@@ -103,8 +103,13 @@
           $counter++;
 
           $children = fn_object_to_html($elements, $element->ID, $defaultParent);
+          $hasChildren = $children ? 'has-child' : '';
+          $isActive = $element->ID === get_the_ID() ? 'active' : '';
+          $isParent = (wp_get_post_parent_id(get_the_ID()) === $element->ID) ? 'active' : '';
+          $class = trim($hasChildren . ' ' . $isActive . ' ' . $isParent);
+          $dropdown = (($hasChildren && $isActive) || $isParent) ? '-' : '+';
 
-          $html .= "<li ".($children ? 'class="has-child"' : '')."><a href='".get_permalink($element->ID)."'>{$element->post_title}". (($element->post_parent == $defaultParent && $children)? '<span class=\'dropdown show\'>+</span>' : '')."</a>";
+          $html .= "<li class='{$class}'><a href='".get_permalink($element->ID)."'>{$element->post_title}". (($element->post_parent == $defaultParent && $children)? '<span class="dropdown show">' . $dropdown . '</span>' : '')."</a>";
 
           if ($children) {
               $html .= $children;
@@ -125,7 +130,7 @@
       $branch = array();
 
       foreach ($elements as $element) {
-    
+
         if ($element->parent == $parentId) {
           $children = fn_arrange_object($elements, $element->cat_ID);
           if ($children) {
@@ -165,8 +170,8 @@
 
        $path = explode('/', $path);
 
-       return (isset($path) && $path[$segment_id]) 
-                ? $path[$segment_id] 
+       return (isset($path) && $path[$segment_id])
+                ? $path[$segment_id]
                 : null;
     }
   }
